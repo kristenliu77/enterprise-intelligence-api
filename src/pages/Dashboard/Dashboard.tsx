@@ -109,7 +109,7 @@ export default function Dashboard(): JSX.Element {
 
   return (
     <Space direction="vertical" size={16} style={{ width: "100%" }}>
-      <PageHeader title="招商驾驶舱" description={productConfig.slogan} tags={["演示数据", "多源热度", "招商研判"]} />
+      <PageHeader title="招商驾驶舱" description={productConfig.slogan} />
       <FilterBar region={region} industry={industry} onRegionChange={setRegion} onIndustryChange={setIndustry} onReset={() => { setRegion("全部区域"); setIndustry("全部行业"); }} onRefresh={() => message.success("已按当前筛选刷新")} onExport={exportReport} />
       <div className="content-grid metric-grid">
         {metrics.map((item) => <MetricCard key={item.title} {...item} />)}
