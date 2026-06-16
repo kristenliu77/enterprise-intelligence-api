@@ -34,7 +34,7 @@ export default function IndustryRegion(): JSX.Element {
                         <Descriptions.Item label="企业数量">{industry.enterpriseCount}</Descriptions.Item>
                         <Descriptions.Item label="主要风险">{industry.risk}</Descriptions.Item>
                       </Descriptions>
-                      <Progress percent={industry.chainCompleteness} strokeColor="#0E8A78" />
+                      <Progress percent={industry.chainCompleteness} strokeColor="#059691" />
                       <Typography.Text type="secondary">产业链完整度</Typography.Text>
                     </Card>
                   </Col>
@@ -52,7 +52,7 @@ export default function IndustryRegion(): JSX.Element {
                             label: { show: true },
                             data: chainNodes.map((name, index) => ({ name, x: index * 170, y: index % 2 === 0 ? 110 : 190, value: 70 + index * 4 })),
                             links: chainNodes.slice(1).map((name, index) => ({ source: chainNodes[index], target: name })),
-                            lineStyle: { color: "#1677FF", width: 2 }
+                            lineStyle: { color: "#1B5FE0", width: 2 }
                           }]
                         }}
                       />
@@ -97,7 +97,7 @@ export default function IndustryRegion(): JSX.Element {
                           grid: { left: 86, right: 24, top: 18, bottom: 30 },
                           xAxis: { max: 100 },
                           yAxis: { type: "category", data: selectedRegions.map((item) => item.name), inverse: true },
-                          series: [{ type: "bar", data: selectedRegions.map((item) => item.heatScore), itemStyle: { color: "#1677FF" } }]
+                          series: [{ type: "bar", data: selectedRegions.map((item) => item.heatScore), itemStyle: { color: "#1B5FE0" } }]
                         }}
                       />
                     </ChartCard>

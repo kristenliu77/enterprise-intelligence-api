@@ -20,33 +20,48 @@ export default function App(): JSX.Element {
       theme={{
         algorithm: isNight ? theme.darkAlgorithm : theme.defaultAlgorithm,
         token: {
-          colorPrimary: "#1677FF",
-          colorSuccess: "#0E8A78",
-          colorWarning: "#F59E0B",
-          colorError: "#D64545",
-          colorBgLayout: isNight ? "#08111F" : "#F3F6FA",
-          colorBgContainer: isNight ? "#111C2E" : "#FFFFFF",
-          colorText: isNight ? "#E6EDF7" : "#1F2937",
-          colorTextSecondary: isNight ? "#9AA7BA" : "#667085",
-          colorBorder: isNight ? "#26364D" : "#E4EAF1",
+          colorPrimary: "#1B5FE0",
+          colorSuccess: "#059691",
+          colorWarning: "#F07B2C",
+          colorError: "#DC4A3C",
+          colorInfo: "#1B5FE0",
+          colorBgLayout: isNight ? "#0B1420" : "#F8F9FB",
+          colorBgContainer: isNight ? "#131E30" : "#FFFFFF",
+          colorText: isNight ? "#E2E8F0" : "#1E293B",
+          colorTextSecondary: isNight ? "#8899B4" : "#64748B",
+          colorBorder: isNight ? "#1E304A" : "#E8ECF1",
           borderRadius: 8,
+          borderRadiusLG: 10,
           fontFamily:
-            '"Source Han Sans SC","Noto Sans SC","Microsoft YaHei","PingFang SC",sans-serif'
+            '"Source Han Sans SC","Noto Sans SC","Microsoft YaHei","PingFang SC",sans-serif',
         },
         components: {
           Layout: {
-            headerBg: isNight ? "#0D1828" : "#ffffff",
-            siderBg: "#0B3A6E",
-            bodyBg: isNight ? "#08111F" : "#F3F6FA"
+            headerBg: isNight ? "rgba(19,30,48,0.86)" : "rgba(255,255,255,0.82)",
+            siderBg: "#0F2645",
+            triggerBg: "#0F2645",
+            bodyBg: isNight ? "#0B1420" : "#F8F9FB",
+          },
+          Menu: {
+            darkItemBg: "transparent",
+            darkItemSelectedBg: "rgba(27,95,224,0.22)",
+            darkItemSelectedColor: "#FFFFFF",
+            darkItemHoverBg: "rgba(255,255,255,0.06)",
           },
           Card: {
-            borderRadiusLG: 10,
-            colorBgContainer: isNight ? "#111C2E" : "#FFFFFF"
+            borderRadiusLG: 12,
+          },
+          Button: {
+            borderRadius: 8,
+            controlHeight: 36,
+          },
+          Tag: {
+            borderRadiusSM: 6,
           },
           Table: {
-            headerBg: isNight ? "#16243A" : "#FAFAFA"
-          }
-        }
+            headerBg: isNight ? "#162238" : "#FAFAFA",
+          },
+        },
       }}
     >
       <BrowserRouter>

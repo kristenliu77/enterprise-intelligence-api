@@ -434,3 +434,89 @@ body.theme-night .kanban-column {
   background: #0C1728;
   border-color: var(--color-border);
 }
+
+/* ── Night mode: fix number/text visibility ── */
+body.theme-night .score-number {
+  color: #E2E8F0;
+}
+
+body.theme-night .metric-card .ant-statistic-content-value {
+  color: #E2E8F0;
+}
+
+body.theme-night .ant-typography {
+  color: var(--color-text);
+}
+
+body.theme-night .ant-card {
+  color: var(--color-text);
+}
+
+body.theme-night .ant-card-head-title {
+  color: #E2E8F0;
+}
+
+body.theme-night .ant-statistic-title {
+  color: var(--color-text-secondary);
+}
+
+body.theme-night .ant-tabs-tab {
+  color: var(--color-text-secondary);
+}
+
+body.theme-night .ant-tabs-tab-active .ant-tabs-tab-btn {
+  color: var(--color-primary);
+}
+
+body.theme-night .ant-table {
+  color: var(--color-text);
+}
+
+body.theme-night .ant-table-thead > tr > th {
+  background: #162238;
+  color: #A0B4CC;
+  border-bottom-color: var(--color-border);
+}
+
+body.theme-night .ant-table-tbody > tr > td {
+  border-bottom-color: var(--color-border);
+}
+
+body.theme-night .ant-table-tbody > tr:hover > td {
+  background: rgba(255,255,255,0.03);
+}
+
+body.theme-night .ant-descriptions-item-label {
+  color: var(--color-text-secondary);
+}
+
+body.theme-night .ant-descriptions-item-content {
+  color: var(--color-text);
+}
+
+body.theme-night .ant-select-selection-item {
+  color: var(--color-text);
+}
+
+body.theme-night .ant-input {
+  background: rgba(255,255,255,0.06);
+  border-color: var(--color-border);
+  color: var(--color-text);
+}
+
+body.theme-night .ant-input::placeholder {
+  color: var(--color-text-secondary);
+}
+
+body.theme-night .ant-btn-text {
+  color: var(--color-text);
+}
+
+body.theme-night .ant-breadcrumb-separator,
+body.theme-night .ant-breadcrumb .ant-breadcrumb-link {
+  color: var(--color-text-secondary);
+}
+
+body.theme-night .ant-divider {
+  border-color: var(--color-border);
+}

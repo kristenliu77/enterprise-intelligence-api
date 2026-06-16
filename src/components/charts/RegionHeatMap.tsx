@@ -107,7 +107,7 @@ export function RegionHeatMap(): JSX.Element {
       inRange: {
         color: isNight
           ? ["#132946", "#1D5D8F", "#19A08D", "#E49B24", "#FF705F"]
-          : ["#D9E7F7", "#7FB7E6", "#0E8A78", "#F59E0B", "#E5573F"]
+          : ["#D9E7FC", "#7FB7F0", "#059691", "#F07B2C", "#DC4A3C"]
       }
     },
     series: [
@@ -120,12 +120,12 @@ export function RegionHeatMap(): JSX.Element {
         top: 20,
         bottom: 10,
         emphasis: {
-          label: { show: true, color: isNight ? "#E6EDF7" : "#0B3A6E", fontWeight: "bold" },
-          itemStyle: { areaColor: "#F59E0B", borderColor: "#ffffff", borderWidth: 1.2 }
+          label: { show: true, color: isNight ? "#E2E8F0" : "#1E293B", fontWeight: "bold" },
+          itemStyle: { areaColor: "#F07B2C", borderColor: "#ffffff", borderWidth: 1.2 }
         },
         select: {
-          label: { show: true, color: isNight ? "#E6EDF7" : "#0B3A6E", fontWeight: "bold" },
-          itemStyle: { areaColor: "#E5573F" }
+          label: { show: true, color: isNight ? "#E2E8F0" : "#1E293B", fontWeight: "bold" },
+          itemStyle: { areaColor: "#DC4A3C" }
         },
         label: { show: false },
         itemStyle: {

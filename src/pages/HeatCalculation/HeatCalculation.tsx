@@ -180,7 +180,7 @@ export default function HeatCalculation(): JSX.Element {
                         <Typography.Text>{dimensionLabels[key as keyof HeatResult["dimensions"]]}</Typography.Text>
                         <Typography.Text strong>{value}</Typography.Text>
                       </Space>
-                      <Progress percent={value} strokeColor={key === "riskScore" ? "#D64545" : "#1677FF"} />
+                      <Progress percent={value} strokeColor={key === "riskScore" ? "#DC4A3C" : "#1B5FE0"} />
                     </div>
                   ))}
                 </Card>
@@ -235,7 +235,7 @@ export default function HeatCalculation(): JSX.Element {
                     tooltip: { trigger: "axis" },
                     xAxis: { type: "category", data: compareResults.map((item) => item.entityName) },
                     yAxis: { max: 100 },
-                    series: [{ type: "bar", data: compareResults.map((item) => item.finalHeat), itemStyle: { color: "#0E8A78" } }]
+                    series: [{ type: "bar", data: compareResults.map((item) => item.finalHeat), itemStyle: { color: "#059691" } }]
                   }}
                 />
               </Col>

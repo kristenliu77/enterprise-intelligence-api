@@ -20,7 +20,7 @@ export function OpportunityMatrix() {
         grid: { left: 56, right: 52, top: 44, bottom: 58, containLabel: true },
         xAxis: { name: "政策匹配度", nameLocation: "middle", nameGap: 34, max: 100 },
         yAxis: { name: "市场热度", nameLocation: "middle", nameGap: 42, max: 100 },
-        visualMap: { show: false, min: 70, max: 95, dimension: 1, inRange: { color: ["#1677FF", "#0E8A78", "#F59E0B"] } },
+        visualMap: { show: false, min: 70, max: 95, dimension: 1, inRange: { color: ["#1B5FE0", "#059691", "#F07B2C"] } },
         series: [
           {
             type: "scatter",
@@ -29,10 +29,10 @@ export function OpportunityMatrix() {
           }
         ],
         graphic: [
-          { type: "text", left: "68%", top: "20%", style: { text: "优先招商", fill: "#0E8A78", fontWeight: 700 } },
-          { type: "text", left: "18%", top: "20%", style: { text: "长期培育", fill: "#667085" } },
-          { type: "text", left: "18%", top: "72%", style: { text: "谨慎评估", fill: "#D64545" } },
-          { type: "text", left: "68%", top: "72%", style: { text: "机会观察", fill: "#F59E0B" } }
+          { type: "text", left: "68%", top: "20%", style: { text: "优先招商", fill: "#059691", fontWeight: 700 } },
+          { type: "text", left: "18%", top: "20%", style: { text: "长期培育", fill: "#64748B" } },
+          { type: "text", left: "18%", top: "72%", style: { text: "谨慎评估", fill: "#DC4A3C" } },
+          { type: "text", left: "68%", top: "72%", style: { text: "机会观察", fill: "#F07B2C" } }
         ]
       }}
     />

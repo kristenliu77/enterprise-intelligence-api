@@ -159,7 +159,7 @@ export default function Dashboard(): JSX.Element {
             grid: { left: 36, right: 18, top: 20, bottom: 30 },
             xAxis: { type: "category", data: heatTrends.map((item) => item.name) },
             yAxis: { max: 100 },
-            series: [{ type: "bar", data: industries.slice(0, 5).map((item) => item.heatScore), itemStyle: { color: "#1677FF" } }]
+            series: [{ type: "bar", data: industries.slice(0, 5).map((item) => item.heatScore), itemStyle: { color: "#1B5FE0" } }]
           }}
         />
         <Divider />

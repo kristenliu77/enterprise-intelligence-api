@@ -19,11 +19,11 @@ export default function RecommendationCard({ opportunity }: RecommendationCardPr
       <Typography.Text type="secondary">风险提示：{opportunity.risk}</Typography.Text>
       <div style={{ marginTop: 14 }}>
         <Typography.Text>综合热度</Typography.Text>
-        <Progress percent={opportunity.heat} strokeColor="#F59E0B" />
+        <Progress percent={opportunity.heat} strokeColor="#F07B2C" />
         <Typography.Text>政策匹配度</Typography.Text>
-        <Progress percent={opportunity.policyMatch} strokeColor="#0E8A78" />
+        <Progress percent={opportunity.policyMatch} strokeColor="#059691" />
         <Typography.Text>投资活跃度</Typography.Text>
-        <Progress percent={opportunity.investmentActivity} strokeColor="#1677FF" />
+        <Progress percent={opportunity.investmentActivity} strokeColor="#1B5FE0" />
       </div>
       <Space style={{ marginTop: 12 }}>
         <Button type="primary" onClick={() => message.success("已打开分析视角")}>查看分析</Button>
