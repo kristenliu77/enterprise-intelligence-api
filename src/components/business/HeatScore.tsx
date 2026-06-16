@@ -1,4 +1,4 @@
-import { Progress, Space, Typography } from "antd";
+import { Space, Typography } from "antd";
 import { heatLevel } from "../../services/heatEngine";
 import { HeatLevelTag } from "./HeatLevelTag";
 
@@ -8,25 +8,47 @@ interface HeatScoreProps {
   compact?: boolean;
 }
 
+/** Map a 0–100 score to a position on the heat gradient. */
+function heatColor(score: number): string {
+  if (score >= 90) return "#DC4A3C";
+  if (score >= 75) return "#F07B2C";
+  if (score >= 60) return "#059691";
+  if (score >= 40) return "#1B5FE0";
+  return "#6B7C93";
+}
+
 export function HeatScore({ score, value, compact = false }: HeatScoreProps): JSX.Element {
   const current = value ?? score ?? 0;
+
   if (compact) {
     return (
       <Space size={6}>
-        <Typography.Text strong>{current.toFixed(1)}</Typography.Text>
+        <Typography.Text strong style={{ fontVariantNumeric: "tabular-nums" }}>
+          {current.toFixed(1)}
+        </Typography.Text>
         <HeatLevelTag level={heatLevel(current)} />
       </Space>
     );
   }
+
   return (
-    <Space direction="vertical" size={6} style={{ width: "100%" }}>
+    <Space direction="vertical" size={8} style={{ width: "100%" }}>
       <Space align="baseline">
-        <Typography.Title level={2} style={{ margin: 0 }}>
+        <Typography.Title level={2} style={{ margin: 0, fontVariantNumeric: "tabular-nums" }}>
           {current.toFixed(2)}
         </Typography.Title>
         <HeatLevelTag level={heatLevel(current)} />
       </Space>
-      <Progress percent={Math.round(current)} showInfo={false} strokeColor={current >= 90 ? "#E5573F" : "#1677FF"} />
+      {/* ── Signature heat ladder ── */}
+      <div className="heat-ladder">
+        <div
+          className="heat-ladder-bar"
+          style={{
+            width: `${Math.min(100, current)}%`,
+            backgroundColor: heatColor(current),
+          }}
+        />
+      </div>
     </Space>
   );
 }

@@ -5,6 +5,7 @@ import type { EChartsOption } from "echarts";
 import chinaGeoJson from "../../assets/maps/china.json";
 import { enterprises, regions } from "../../mock/data";
 import { BaseChart } from "./BaseChart";
+import { useAppStore } from "../../store/appStore";
 
 interface GeoFeature {
   properties: {
@@ -58,6 +59,8 @@ function readMapName(params: unknown): string | undefined {
 }
 
 export function RegionHeatMap(): JSX.Element {
+  const themeMode = useAppStore((state) => state.themeMode);
+  const isNight = themeMode === "night";
   const provinceData = useMemo<ProvinceHeat[]>(() => {
     const provinceNames = typedChinaGeoJson.features.map((feature) => feature.properties.name);
     return provinceNames.map((provinceName) => {
@@ -100,9 +103,11 @@ export function RegionHeatMap(): JSX.Element {
       itemWidth: 12,
       itemHeight: 92,
       text: ["高热", "低热"],
-      textStyle: { color: "#4B5563" },
+      textStyle: { color: isNight ? "#B8C7DC" : "#4B5563" },
       inRange: {
-        color: ["#D9E7F7", "#7FB7E6", "#0E8A78", "#F59E0B", "#E5573F"]
+        color: isNight
+          ? ["#132946", "#1D5D8F", "#19A08D", "#E49B24", "#FF705F"]
+          : ["#D9E7F7", "#7FB7E6", "#0E8A78", "#F59E0B", "#E5573F"]
       }
     },
     series: [
@@ -115,23 +120,23 @@ export function RegionHeatMap(): JSX.Element {
         top: 20,
         bottom: 10,
         emphasis: {
-          label: { show: true, color: "#0B3A6E", fontWeight: "bold" },
+          label: { show: true, color: isNight ? "#E6EDF7" : "#0B3A6E", fontWeight: "bold" },
           itemStyle: { areaColor: "#F59E0B", borderColor: "#ffffff", borderWidth: 1.2 }
         },
         select: {
-          label: { show: true, color: "#0B3A6E", fontWeight: "bold" },
+          label: { show: true, color: isNight ? "#E6EDF7" : "#0B3A6E", fontWeight: "bold" },
           itemStyle: { areaColor: "#E5573F" }
         },
         label: { show: false },
         itemStyle: {
-          borderColor: "#FFFFFF",
+          borderColor: isNight ? "#2D4262" : "#FFFFFF",
           borderWidth: 0.8,
-          areaColor: "#D9E7F7"
+          areaColor: isNight ? "#132946" : "#D9E7F7"
         },
         data: provinceData
       }
     ]
-  }), [provinceData]);
+  }), [isNight, provinceData]);
 
   return (
     <div className="region-heat-layout">

@@ -12,9 +12,11 @@ import {
   MenuFoldOutlined,
   MenuOutlined,
   MenuUnfoldOutlined,
+  MoonOutlined,
   QuestionCircleOutlined,
   SearchOutlined,
   SettingOutlined,
+  SunOutlined,
   UserOutlined
 } from "@ant-design/icons";
 import { Avatar, Breadcrumb, Button, Drawer, Dropdown, Grid, Input, Layout, Menu, Select, Space, Tag, Typography } from "antd";
@@ -107,6 +109,8 @@ export default function AppLayout(): JSX.Element {
   const mobileNavOpen = useAppStore((state) => state.mobileNavOpen);
   const setCollapsed = useAppStore((state) => state.setCollapsed);
   const setMobileNavOpen = useAppStore((state) => state.setMobileNavOpen);
+  const themeMode = useAppStore((state) => state.themeMode);
+  const toggleThemeMode = useAppStore((state) => state.toggleThemeMode);
   const logout = useAppStore((state) => state.logout);
   const title = routeTitles[location.pathname] ?? "招商驾驶舱";
 
@@ -122,7 +126,7 @@ export default function AppLayout(): JSX.Element {
           open={mobileNavOpen}
           onClose={() => setMobileNavOpen(false)}
           width={260}
-          bodyStyle={{ padding: 0, background: "#0B3A6E" }}
+          bodyStyle={{ padding: 0, background: "linear-gradient(180deg, #0F2645 0%, #152E54 100%)" }}
         >
           <SidebarContent />
         </Drawer>
@@ -157,6 +161,12 @@ export default function AppLayout(): JSX.Element {
             />
             <Tag className="desktop-only" color="blue">{productConfig.dataUpdatedAt}</Tag>
             <Input className="desktop-only" prefix={<SearchOutlined />} placeholder="搜索企业、项目、政策" style={{ width: 220 }} />
+            <Button
+              icon={themeMode === "night" ? <SunOutlined /> : <MoonOutlined />}
+              onClick={toggleThemeMode}
+            >
+              {themeMode === "night" ? "日间" : "夜间"}
+            </Button>
             <Button icon={<BellOutlined />} />
             <Button icon={<QuestionCircleOutlined />} />
             <Dropdown

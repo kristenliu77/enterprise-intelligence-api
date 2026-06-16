@@ -75,8 +75,6 @@ class Settings:
     debug: bool = os.getenv("DEBUG", "false").lower() in {"1", "true", "yes", "on"}
 
     redis_url: str = os.getenv("REDIS_URL", _REDIS_DEFAULT)
-    celery_broker_url: str = os.getenv("CELERY_BROKER_URL", os.getenv("REDIS_URL", _REDIS_DEFAULT))
-    celery_result_backend: str = os.getenv("CELERY_RESULT_BACKEND", os.getenv("REDIS_URL", "redis://localhost:6379/1"))
     monitored_companies: List[str] = field(default_factory=_parse_monitored_companies)
     hotness_results_file: str = os.getenv("HOTNESS_RESULTS_FILE", "hotness_scores.json")
 

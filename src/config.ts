@@ -11,8 +11,8 @@ export const productConfig = {
 
 export const heatColors = {
   low: "#6B7C93",
-  normal: "#1677FF",
-  elevated: "#0E8A78",
-  high: "#F59E0B",
-  extreme: "#E5573F"
+  normal: "#1B5FE0",
+  elevated: "#059691",
+  high: "#F07B2C",
+  extreme: "#DC4A3C"
 };
