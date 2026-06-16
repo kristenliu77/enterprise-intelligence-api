@@ -1,0 +1,59 @@
+:root {
+  --color-primary-deep: #0b3a6e;
+  --color-primary: #1677ff;
+  --color-growth: #0e8a78;
+  --color-heat: #f59e0b;
+  --color-hot: #e5573f;
+  --color-bg: #f3f6fa;
+  --color-card: #ffffff;
+  --color-text: #1f2937;
+  --color-text-secondary: #667085;
+  --color-border: #e4eaf1;
+  --color-risk: #d64545;
+  --radius-card: 10px;
+  --shadow-card: 0 10px 28px rgba(11, 58, 110, 0.06);
+  font-family:
+    "Source Han Sans SC",
+    "Noto Sans SC",
+    "Microsoft YaHei",
+    "PingFang SC",
+    sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: var(--color-bg);
+  color: var(--color-text);
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.demo-watermark {
+  color: var(--color-text-secondary);
+  font-size: 12px;
+}
+
+.scroll-table {
+  overflow-x: auto;
+}
+
+@media print {
+  .no-print,
+  .ant-layout-sider,
+  .ant-layout-header,
+  .assistant-fab,
+  .assistant-panel {
+    display: none !important;
+  }
+
+  body {
+    background: #ffffff;
+  }
+}

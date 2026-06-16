@@ -1,0 +1,378 @@
+.app-shell {
+  min-height: 100vh;
+}
+
+.app-sider {
+  box-shadow: 8px 0 24px rgba(11, 58, 110, 0.12);
+}
+
+.brand {
+  height: 64px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 0 18px;
+  color: #ffffff;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.brand-mark {
+  width: 32px;
+  height: 32px;
+  display: grid;
+  place-items: center;
+  border-radius: 8px;
+  background: rgba(22, 119, 255, 0.28);
+  font-weight: 800;
+}
+
+.brand-title {
+  font-weight: 700;
+  line-height: 1.1;
+}
+
+.brand-subtitle {
+  color: rgba(255, 255, 255, 0.66);
+  font-size: 11px;
+}
+
+.side-account {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 14px 16px;
+  color: rgba(255, 255, 255, 0.82);
+  background: rgba(5, 28, 54, 0.28);
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.app-header {
+  height: 64px;
+  padding: 0 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  border-bottom: 1px solid var(--color-border);
+  background: #ffffff;
+}
+
+.header-left,
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-width: 0;
+}
+
+.page-content {
+  padding: 20px 24px 32px;
+  min-height: calc(100vh - 64px);
+}
+
+.content-grid {
+  display: grid;
+  gap: 16px;
+}
+
+.grid-2 {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.grid-3 {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.grid-4 {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.metric-grid {
+  grid-template-columns: repeat(6, minmax(160px, 1fr));
+}
+
+.section-card {
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-card);
+  background: var(--color-card);
+  box-shadow: var(--shadow-card);
+}
+
+.page-header {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 2px 0 4px;
+}
+
+.filter-bar {
+  padding: 14px;
+  background: #ffffff;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-card);
+  box-shadow: var(--shadow-card);
+}
+
+.metric-card {
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-card);
+  box-shadow: var(--shadow-card);
+}
+
+.chart-card,
+.chart-card .ant-card-body {
+  overflow: hidden;
+}
+
+.chart-canvas {
+  width: 100%;
+  min-width: 0;
+}
+
+.region-heat-layout {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 420px), 1fr));
+  gap: 16px;
+  align-items: start;
+}
+
+.china-heat-map {
+  min-height: 420px;
+  padding: 8px;
+  background:
+    radial-gradient(circle at 68% 34%, rgba(245, 158, 11, 0.16), transparent 34%),
+    linear-gradient(180deg, #f8fbff, #eef4fb);
+  border: 1px solid var(--color-border);
+  border-radius: 10px;
+}
+
+.region-detail-card {
+  width: 100%;
+}
+
+.region-cell {
+  border: 0;
+  border-radius: 8px;
+  min-height: 86px;
+  padding: 12px;
+  color: #ffffff;
+  text-align: left;
+  cursor: pointer;
+  transition: transform 0.18s ease, box-shadow 0.18s ease;
+}
+
+.region-cell:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 24px rgba(11, 58, 110, 0.18);
+}
+
+.region-cell strong,
+.region-cell span {
+  display: block;
+}
+
+.region-cell span {
+  margin-top: 12px;
+  font-size: 26px;
+  font-weight: 800;
+}
+
+.compact-card .ant-card-body {
+  padding: 16px;
+}
+
+.map-detail {
+  border-left: 1px solid var(--color-border);
+  padding-left: 16px;
+}
+
+.ranking-row {
+  display: grid;
+  grid-template-columns: 44px 1fr 80px 86px 76px;
+  gap: 10px;
+  align-items: center;
+  padding: 11px 0;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.rank-badge {
+  width: 28px;
+  height: 28px;
+  border-radius: 8px;
+  display: grid;
+  place-items: center;
+  background: #edf4ff;
+  color: var(--color-primary-deep);
+  font-weight: 700;
+}
+
+.rank-badge.top {
+  background: #fff4df;
+  color: #9a5a00;
+}
+
+.opportunity-card {
+  height: 100%;
+}
+
+.score-number {
+  font-size: 42px;
+  font-weight: 800;
+  color: var(--color-primary-deep);
+  line-height: 1;
+}
+
+.assistant-fab {
+  position: fixed;
+  right: 24px;
+  bottom: 24px;
+  z-index: 1000;
+  box-shadow: 0 12px 28px rgba(22, 119, 255, 0.26);
+}
+
+.assistant-panel .ant-drawer-body {
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.assistant-messages {
+  flex: 1;
+  overflow: auto;
+  padding: 16px;
+  background: #f7f9fc;
+}
+
+.assistant-message {
+  margin-bottom: 12px;
+  padding: 10px 12px;
+  border-radius: 10px;
+  background: #ffffff;
+  border: 1px solid var(--color-border);
+}
+
+.assistant-message.user {
+  margin-left: 36px;
+  background: #edf4ff;
+}
+
+.assistant-input {
+  padding: 14px;
+  border-top: 1px solid var(--color-border);
+  background: #ffffff;
+}
+
+.login-page {
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: 1.1fr 480px;
+  background:
+    linear-gradient(125deg, rgba(11, 58, 110, 0.96), rgba(14, 70, 121, 0.86)),
+    radial-gradient(circle at 30% 30%, rgba(22, 119, 255, 0.24), transparent 36%);
+}
+
+.login-hero {
+  padding: 76px;
+  color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.login-card {
+  margin: auto 54px;
+  border-radius: 12px;
+}
+
+.heat-process {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.kanban {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(220px, 1fr));
+  gap: 14px;
+  overflow-x: auto;
+}
+
+.kanban-column {
+  min-height: 360px;
+  background: #f8fafc;
+  border: 1px solid var(--color-border);
+  border-radius: 10px;
+  padding: 12px;
+}
+
+.kanban-card {
+  margin-bottom: 10px;
+  border: 1px solid var(--color-border);
+}
+
+.report-preview {
+  background: #ffffff;
+  color: #1f2937;
+  padding: 28px;
+  border: 1px solid var(--color-border);
+  border-radius: 10px;
+}
+
+@media (max-width: 1200px) {
+  .metric-grid,
+  .grid-4 {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 900px) {
+  .grid-2,
+  .grid-3,
+  .grid-4,
+  .metric-grid,
+  .heat-process,
+  .region-heat-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .app-header {
+    padding: 0 12px;
+  }
+
+  .page-content {
+    padding: 14px;
+  }
+
+  .login-page {
+    grid-template-columns: 1fr;
+  }
+
+  .login-hero {
+    padding: 32px 24px;
+  }
+
+  .login-card {
+    margin: 24px;
+  }
+}
+
+@media (max-width: 768px) {
+  .header-right .desktop-only {
+    display: none;
+  }
+
+  .ranking-row {
+    grid-template-columns: 36px 1fr 68px;
+  }
+
+  .ranking-row > :nth-child(4),
+  .ranking-row > :nth-child(5) {
+    display: none;
+  }
+
+  .kanban {
+    grid-template-columns: repeat(8, 240px);
+  }
+}

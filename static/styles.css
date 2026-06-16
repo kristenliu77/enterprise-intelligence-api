@@ -1,0 +1,274 @@
+:root {
+  color-scheme: light;
+  --bg: #f4f7f8;
+  --panel: #ffffff;
+  --ink: #14201f;
+  --muted: #5f6f6d;
+  --line: #dbe4e2;
+  --accent: #0d7f68;
+  --accent-strong: #075f4e;
+  --warning: #a75f00;
+  --shadow: 0 18px 45px rgba(16, 35, 31, 0.08);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font-family:
+    ui-sans-serif,
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    sans-serif;
+}
+
+.app-shell {
+  width: min(1440px, calc(100% - 40px));
+  margin: 0 auto;
+  padding: 32px 0 48px;
+}
+
+.hero-panel {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(360px, 500px);
+  gap: 28px;
+  align-items: end;
+  padding: 34px;
+  background: linear-gradient(135deg, #ffffff 0%, #edf5f2 100%);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  box-shadow: var(--shadow);
+}
+
+h1,
+h2,
+p {
+  margin: 0;
+}
+
+h1 {
+  max-width: 760px;
+  font-size: clamp(36px, 5vw, 72px);
+  line-height: 0.98;
+  letter-spacing: 0;
+}
+
+.hero-panel p {
+  max-width: 640px;
+  margin-top: 18px;
+  color: var(--muted);
+  font-size: 17px;
+  line-height: 1.7;
+}
+
+.analysis-form {
+  display: grid;
+  gap: 14px;
+  padding: 18px;
+  background: rgba(255, 255, 255, 0.76);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+}
+
+label {
+  display: grid;
+  gap: 7px;
+  color: var(--muted);
+  font-size: 13px;
+  font-weight: 700;
+}
+
+input {
+  width: 100%;
+  min-height: 44px;
+  padding: 0 12px;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  color: var(--ink);
+  font: inherit;
+  background: #fff;
+}
+
+button {
+  min-height: 44px;
+  border: 0;
+  border-radius: 6px;
+  color: #fff;
+  background: var(--accent);
+  font: inherit;
+  font-weight: 800;
+  cursor: pointer;
+}
+
+button:hover {
+  background: var(--accent-strong);
+}
+
+.ghost-button {
+  min-height: 34px;
+  padding: 0 12px;
+  border: 1px solid var(--line);
+  color: var(--accent-strong);
+  background: #fff;
+  font-size: 13px;
+}
+
+.ghost-button:hover {
+  color: #fff;
+}
+
+.status-row {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 14px;
+  margin: 18px 0;
+}
+
+.status-card,
+.panel {
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  box-shadow: 0 10px 24px rgba(16, 35, 31, 0.05);
+}
+
+.status-card {
+  display: grid;
+  gap: 8px;
+  padding: 18px;
+}
+
+.status-card span,
+.metric-label {
+  color: var(--muted);
+  font-size: 12px;
+  font-weight: 800;
+}
+
+.status-card strong {
+  font-size: 24px;
+  line-height: 1;
+}
+
+.content-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.panel {
+  padding: 22px;
+}
+
+.panel-header {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 18px;
+}
+
+h2 {
+  font-size: 20px;
+  letter-spacing: 0;
+}
+
+.metric-list,
+.policy-list,
+.text-block {
+  display: grid;
+  gap: 12px;
+  color: var(--muted);
+  line-height: 1.6;
+}
+
+.metric-item,
+.policy-item {
+  display: flex;
+  justify-content: space-between;
+  gap: 14px;
+  padding: 12px 0;
+  border-top: 1px solid var(--line);
+}
+
+.metric-value,
+.policy-amount {
+  color: var(--ink);
+  font-weight: 800;
+  white-space: nowrap;
+}
+
+.radar-wrap {
+  display: grid;
+  grid-template-columns: minmax(280px, 1fr) 170px;
+  gap: 18px;
+  align-items: center;
+}
+
+#radarChart {
+  width: 100%;
+  max-height: 360px;
+}
+
+.legend {
+  display: grid;
+  gap: 10px;
+}
+
+.legend-item {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.legend-swatch {
+  width: 12px;
+  height: 12px;
+  border-radius: 3px;
+}
+
+.raw-panel {
+  margin-top: 18px;
+}
+
+pre {
+  max-height: 420px;
+  overflow: auto;
+  margin: 0;
+  padding: 16px;
+  background: #0d1716;
+  color: #d6f7ed;
+  border-radius: 6px;
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+.error {
+  color: #a2321d;
+}
+
+@media (max-width: 900px) {
+  .hero-panel,
+  .content-grid,
+  .status-row,
+  .radar-wrap {
+    grid-template-columns: 1fr;
+  }
+
+  .app-shell {
+    width: min(100% - 24px, 720px);
+    padding-top: 16px;
+  }
+
+  .hero-panel {
+    padding: 22px;
+  }
+}

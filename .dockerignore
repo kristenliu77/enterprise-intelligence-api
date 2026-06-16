@@ -1,0 +1,15 @@
+.venv
+__pycache__
+*.pyc
+.pytest_cache
+.git
+.gitignore
+.env
+logs
+data
+hotness_scores.json
+node_modules
+dist
+*.tsbuildinfo
+.DS_Store
+README.md

@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>光谷企业智能分析平台</title>
+    <link rel="stylesheet" href="/static/styles.css" />
+  </head>
+  <body>
+    <main class="app-shell">
+      <section class="hero-panel">
+        <div>
+          <h1>光谷企业智能分析平台</h1>
+          <p>输入企业名称和投资额，生成热度评分、产业链补位建议、政策组合与园区雷达对比。</p>
+        </div>
+        <form id="analysisForm" class="analysis-form">
+          <label>
+            企业名称
+            <input id="companyName" name="companyName" value="腾讯科技有限公司" autocomplete="off" />
+          </label>
+          <label>
+            投资额（万元）
+            <input id="investmentAmount" name="investmentAmount" type="number" value="8000" min="0" step="100" />
+          </label>
+          <button type="submit">运行完整分析</button>
+        </form>
+      </section>
+
+      <section class="status-row">
+        <div class="status-card">
+          <span>服务状态</span>
+          <strong id="serviceStatus">检查中</strong>
+        </div>
+        <div class="status-card">
+          <span>热度分数</span>
+          <strong id="scoreValue">--</strong>
+        </div>
+        <div class="status-card">
+          <span>匹配产业链</span>
+          <strong id="chainName">--</strong>
+        </div>
+        <div class="status-card">
+          <span>政策上限</span>
+          <strong id="policyMax">--</strong>
+        </div>
+      </section>
+
+      <section class="content-grid">
+        <article class="panel">
+          <div class="panel-header">
+            <h2>热度明细</h2>
+            <button class="ghost-button" id="hotnessButton" type="button">单独刷新</button>
+          </div>
+          <div id="hotnessDetails" class="metric-list"></div>
+        </article>
+
+        <article class="panel">
+          <div class="panel-header">
+            <h2>产业链匹配</h2>
+            <button class="ghost-button" id="matchButton" type="button">按光电子/激光雷达测试</button>
+          </div>
+          <div id="chainDetails" class="text-block"></div>
+        </article>
+
+        <article class="panel">
+          <div class="panel-header">
+            <h2>政策组合</h2>
+            <button class="ghost-button" id="policyButton" type="button">按制造业测试</button>
+          </div>
+          <div id="policyDetails" class="policy-list"></div>
+        </article>
+
+        <article class="panel radar-panel">
+          <div class="panel-header">
+            <h2>园区雷达</h2>
+            <button class="ghost-button" id="radarButton" type="button">刷新雷达</button>
+          </div>
+          <div class="radar-wrap">
+            <svg id="radarChart" viewBox="0 0 360 320" role="img" aria-label="园区雷达图"></svg>
+            <div id="radarLegend" class="legend"></div>
+          </div>
+        </article>
+      </section>
+
+      <section class="panel raw-panel">
+        <div class="panel-header">
+          <h2>完整 JSON</h2>
+          <button class="ghost-button" id="clearButton" type="button">清空</button>
+        </div>
+        <pre id="rawOutput">{}</pre>
+      </section>
+    </main>
+    <script src="/static/app.js"></script>
+  </body>
+</html>

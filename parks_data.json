@@ -1,0 +1,66 @@
+{
+  "updated_at": "2026-06-13",
+  "note": "Manual baseline dataset. Replace with latest official/statistical values before production use.",
+  "parks": [
+    {
+      "name": "光谷",
+      "high_tech_enterprises": 6200,
+      "leading_industrial_clusters": 6,
+      "average_salary_monthly": 14500,
+      "university_students_nearby": 1300000,
+      "policy_subsidy_cap_10k": 10000,
+      "policy_count": 42,
+      "average_office_rent_yuan_m2_day": 2.8,
+      "average_apartment_rent_yuan_month": 2600,
+      "vc_events_yearly": 320,
+      "vc_amount_100m": 580,
+      "national_incubators": 28,
+      "patents_yearly": 54000
+    },
+    {
+      "name": "张江",
+      "high_tech_enterprises": 5200,
+      "leading_industrial_clusters": 5,
+      "average_salary_monthly": 21000,
+      "university_students_nearby": 780000,
+      "policy_subsidy_cap_10k": 8000,
+      "policy_count": 36,
+      "average_office_rent_yuan_m2_day": 5.8,
+      "average_apartment_rent_yuan_month": 5200,
+      "vc_events_yearly": 460,
+      "vc_amount_100m": 900,
+      "national_incubators": 24,
+      "patents_yearly": 48000
+    },
+    {
+      "name": "苏州工业园",
+      "high_tech_enterprises": 4100,
+      "leading_industrial_clusters": 5,
+      "average_salary_monthly": 15500,
+      "university_students_nearby": 620000,
+      "policy_subsidy_cap_10k": 6000,
+      "policy_count": 34,
+      "average_office_rent_yuan_m2_day": 3.5,
+      "average_apartment_rent_yuan_month": 3400,
+      "vc_events_yearly": 260,
+      "vc_amount_100m": 420,
+      "national_incubators": 22,
+      "patents_yearly": 42000
+    },
+    {
+      "name": "合肥高新区",
+      "high_tech_enterprises": 2700,
+      "leading_industrial_clusters": 4,
+      "average_salary_monthly": 12800,
+      "university_students_nearby": 850000,
+      "policy_subsidy_cap_10k": 5000,
+      "policy_count": 30,
+      "average_office_rent_yuan_m2_day": 2.2,
+      "average_apartment_rent_yuan_month": 2200,
+      "vc_events_yearly": 190,
+      "vc_amount_100m": 310,
+      "national_incubators": 18,
+      "patents_yearly": 30000
+    }
+  ]
+}

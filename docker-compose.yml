@@ -1,0 +1,32 @@
+services:
+  app:
+    build: .
+    container_name: enterprise-intelligence-api
+    env_file:
+      - path: .env
+        required: false
+    environment:
+      REDIS_URL: redis://redis:6379/0
+      CELERY_BROKER_URL: redis://redis:6379/0
+      CELERY_RESULT_BACKEND: redis://redis:6379/1
+      HOTNESS_RESULTS_FILE: /app/data/hotness_scores.json
+    ports:
+      - "8000:8000"
+    depends_on:
+      - redis
+    volumes:
+      - ./logs:/app/logs
+      - ./data:/app/data
+    restart: unless-stopped
+
+  redis:
+    image: redis:7-alpine
+    container_name: enterprise-intelligence-redis
+    ports:
+      - "6379:6379"
+    volumes:
+      - redis-data:/data
+    restart: unless-stopped
+
+volumes:
+  redis-data:

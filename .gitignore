@@ -1,0 +1,36 @@
+# Dependencies
+node_modules/
+
+# Python virtual environment
+.venv/
+__pycache__/
+*.pyc
+*.pyo
+.pytest_cache/
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Build output
+dist/
+*.tsbuildinfo
+vite.config.js
+vite.config.d.ts
+
+# Environment
+.env
+
+# Runtime artifacts
+logs/
+*.log
+hotness_scores.json
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Docker
+data/

@@ -1,0 +1,55 @@
+{
+  "chains": [
+    {
+      "name": "光芯屏端网",
+      "industry": "新一代信息技术",
+      "nodes": [
+        {"id": "optical_materials", "name": "光电子材料", "type": "已有", "industry": "新一代信息技术"},
+        {"id": "laser_chips", "name": "激光器芯片", "type": "已有", "industry": "新一代信息技术"},
+        {"id": "optical_modules", "name": "高速光模块", "type": "已有", "industry": "新一代信息技术"},
+        {"id": "eda_tools", "name": "光电芯片EDA工具", "type": "缺失", "industry": "新一代信息技术"},
+        {"id": "advanced_packaging", "name": "硅光先进封装", "type": "缺失", "industry": "新一代信息技术"},
+        {"id": "display_panels", "name": "新型显示面板", "type": "已有", "industry": "新一代信息技术"},
+        {"id": "smart_terminals", "name": "智能终端整机", "type": "已有", "industry": "新一代信息技术"},
+        {"id": "industrial_networking", "name": "工业互联网设备", "type": "已有", "industry": "新一代信息技术"},
+        {"id": "edge_ai_gateway", "name": "边缘AI网关", "type": "缺失", "industry": "新一代信息技术"}
+      ],
+      "edges": [
+        {"source": "optical_materials", "target": "laser_chips"},
+        {"source": "eda_tools", "target": "laser_chips"},
+        {"source": "laser_chips", "target": "advanced_packaging"},
+        {"source": "advanced_packaging", "target": "optical_modules"},
+        {"source": "optical_modules", "target": "industrial_networking"},
+        {"source": "display_panels", "target": "smart_terminals"},
+        {"source": "smart_terminals", "target": "edge_ai_gateway"},
+        {"source": "edge_ai_gateway", "target": "industrial_networking"}
+      ]
+    },
+    {
+      "name": "生命健康",
+      "industry": "生命健康",
+      "nodes": [
+        {"id": "medical_devices", "name": "高端医疗器械", "type": "已有", "industry": "生命健康"},
+        {"id": "clinical_cro", "name": "临床CRO服务", "type": "已有", "industry": "生命健康"},
+        {"id": "cell_therapy_cdmo", "name": "细胞治疗CDMO", "type": "缺失", "industry": "生命健康"}
+      ],
+      "edges": [
+        {"source": "clinical_cro", "target": "cell_therapy_cdmo"},
+        {"source": "cell_therapy_cdmo", "target": "medical_devices"}
+      ]
+    },
+    {
+      "name": "数字经济",
+      "industry": "数字经济",
+      "nodes": [
+        {"id": "cloud_platform", "name": "行业云平台", "type": "已有", "industry": "数字经济"},
+        {"id": "data_security", "name": "数据安全合规服务", "type": "缺失", "industry": "数字经济"},
+        {"id": "ai_industry_model", "name": "行业大模型应用", "type": "已有", "industry": "数字经济"}
+      ],
+      "edges": [
+        {"source": "cloud_platform", "target": "data_security"},
+        {"source": "data_security", "target": "ai_industry_model"}
+      ]
+    }
+  ]
+}
